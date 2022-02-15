@@ -1,6 +1,6 @@
 import pandas as pd
 import altair as alt
-from vega_datasets import data
+from palmerpenguins import load_penguins
 
-penguins = data.penguins()
-penguins
+penguins = load_penguins()
+penguins.head()
