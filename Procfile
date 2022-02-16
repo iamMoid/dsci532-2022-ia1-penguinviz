@@ -1,1 +1,1 @@
-web: gunicorn src/penguinviz:server
+web: gunicorn app:server
