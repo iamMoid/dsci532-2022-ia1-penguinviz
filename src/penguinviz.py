@@ -4,7 +4,6 @@ from dash import Dash, dcc, html, Input, Output
 from palmerpenguins import load_penguins
 
 penguins = load_penguins()
-print(penguins)
 
 def plot_altair(xcol, ycol):
     plot = alt.Chart(
@@ -28,8 +27,8 @@ app.layout = html.Div([
             options=[{'label': i, 'value': i} for i in penguins.columns]),
         html.Iframe(
             id='scatterplot',
-            style={'border-width': '0', 'width': '100%', 'height': '400px'}),
-            srcDoc=plot_altair(xcol, ycol)
+            style={'border-width': '0', 'width': '100%', 'height': '400px'},
+            srcDoc=plot_altair(xcol='bill_length_mm', ycol='bill_depth_mm'))
         ])
         
 @app.callback(
